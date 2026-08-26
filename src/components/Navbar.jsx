@@ -1,15 +1,22 @@
-import { SidebarTrigger } from './ui/sidebar';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
 function Navbar() {
   return (
-    <nav className='flex h-14 shrink-0 items-center gap-3 border-b border-border px-4 bg-background/95 backdrop-blur sticky top-0 z-40'>
-      <SidebarTrigger className='-ml-1' />
+    <nav className='flex items-center justify-end px-6 py-4 shadow-sm border-zinc-200'>
+      <div className='flex items-center gap-2'>
+        <Avatar className='h-7 w-7 rounded-full border border-zinc-200'>
+          <AvatarImage
+            src='https://github.com/shadcn.png'
+            alt='@shadcn'
+            className='object-cover'
+          />
+          <AvatarFallback className='text-xs font-medium bg-zinc-100 text-zinc-700'>
+            CN
+          </AvatarFallback>
+        </Avatar>
 
-      <div className='h-5 w-px bg-border' />
-
-      <span className='text-sm font-medium text-muted-foreground'>
-        SantriApp
-      </span>
+        <p className='text-sm'>Nama kalian</p>
+      </div>
     </nav>
   );
 }
