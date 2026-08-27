@@ -2,38 +2,39 @@
 import { useState } from 'react';
 
 function Presiden() {
+  const [target, setTarget] = useState(100);
+
   return (
     <>
-      <GubernurDKI />
-      <GubernurJabar />
+      <GubernurDKI target={target} />
+      <GubernurJabar target={target} />
     </>
   );
 }
 
 // Cabang DKI
-function GubernurDKI() {
-  return <WalikotaDKI />;
+function GubernurDKI({ target }) {
+  return <WalikotaDKI target={target} />;
 }
 
-function WalikotaDKI() {
-  return <CamatDKI />;
+function WalikotaDKI({ target }) {
+  return <CamatDKI target={target} />;
 }
 
-function CamatDKI() {
-  return <div>Staf Kecamatan DKI Level</div>;
+function CamatDKI({ target }) {
+  return <div>{target}</div>;
 }
 
 // Cabang Jabar
-function GubernurJabar() {
-  return <WalikotaJabar />;
+function GubernurJabar({ target }) {
+  return <WalikotaJabar target={target} />;
 }
 
-function WalikotaJabar() {
-  return <CamatJabar />;
+function WalikotaJabar({ target }) {
+  return <CamatJabar target={target} />;
 }
 
-function CamatJabar() {
-  const [target, setTarget] = useState(100);
+function CamatJabar({ target }) {
   return <div>Target Pembangunan Jabar: {target}</div>;
 }
 
